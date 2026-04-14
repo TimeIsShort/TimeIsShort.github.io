@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>今天做的两个 Skill - AI音乐生成 + Bug追查</title>
+    <link href="/2026/04/14/two-skills-20260414/"/>
+    <url>/2026/04/14/two-skills-20260414/</url>
+    
+    <content type="html"><![CDATA[<p>今天给 OpenClaw 做了两个实用的 Skill，记录一下。</p><h2 id="🎵-MiniMax-Music-Skill"><a href="#🎵-MiniMax-Music-Skill" class="headerlink" title="🎵 MiniMax Music Skill"></a>🎵 MiniMax Music Skill</h2><p>AI 音乐生成工具，一句话就能创作完整歌曲。</p><p><strong>工作流：</strong></p><ol><li>输入主题 → MiniMax API 生成歌词</li><li>歌词 + 风格 → 生成 MP3 音频</li><li>自动保存到本地文件夹</li></ol><p><strong>生成作品（可点击试听）：</strong></p><style>.audio-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }.audio-card { background: #f8f9fa; border-radius: 8px; padding: 12px 16px; }.audio-name { font-weight: bold; margin-bottom: 6px; color: #333; }.audio-tag { font-size: 12px; color: #888; margin-bottom: 8px; }audio { width: 100%; height: 32px; }video { width: 100%; border-radius: 8px; margin: 8px 0; }.video-section { margin: 24px 0; }.video-label { font-weight: bold; color: #333; margin-bottom: 8px; }</style><div class="audio-list">  <div class="audio-card">    <div class="audio-name">🎵 春日漫步</div>    <div class="audio-tag">Pop · 春日暖阳 · 137秒</div>    <audio controls><source src="/music/春日漫步.mp3" type="audio/mpeg"></audio>  </div>  <div class="audio-card">    <div class="audio-name">🎵 烟雨江南</div>    <div class="audio-tag">中国风 · 烟雨婉约</div>    <audio controls><source src="/music/烟雨江南.mp3" type="audio/mpeg"></audio>  </div>  <div class="audio-card">    <div class="audio-name">🎵 墨染江南</div>    <div class="audio-tag">古风 · 水墨画卷 · 206秒</div>    <audio controls><source src="/music/墨染江南.mp3" type="audio/mpeg"></audio>  </div>  <div class="audio-card">    <div class="audio-name">🎵 夏日微风</div>    <div class="audio-tag">浪漫 · 夏日海边 · 188秒</div>    <audio controls><source src="/music/夏日微风.mp3" type="audio/mpeg"></audio>  </div></div><p><strong>🎬 墨染江南 MV 视频：</strong></p><div class="video-section">  <div class="video-label">📱 抖音/小红书版（9:16 竖屏）</div>  <video controls><source src="/music/墨染江南_抖音.mp4" type="video/mp4"></video></div><div class="video-section">  <div class="video-label">🖥️ B站版（16:9 横屏）</div>  <video controls><source src="/music/墨染江南_B站.mp4" type="video/mp4"></video></div><p><strong>技术细节：</strong></p><ul><li>模型：<code>music-2.6</code></li><li>歌词生成：<code>POST /v1/lyrics_generation</code></li><li>音乐生成：<code>POST /v1/music_generation</code></li><li>视频生成：FFmpeg + ASS字幕滤镜 + 头像背景</li><li>存储：<code>music/[歌曲名]/[歌词.txt, mp3, mp4]</code></li></ul><hr><h2 id="🐛-Bug-Hunter-Skill"><a href="#🐛-Bug-Hunter-Skill" class="headerlink" title="🐛 Bug Hunter Skill"></a>🐛 Bug Hunter Skill</h2><p>截图驱动的 Bug 追查 Agent，收到截图自动跑完全流程。</p><p><strong>工作流：</strong></p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">发截图 → understand_image 分析 → web_search 搜方案 → 读本地代码 → 给出修复代码<br></code></pre></td></tr></table></figure><p><strong>核心工具：</strong></p><ul><li><code>minimax-coding.understand_image</code> — 截图分析错误</li><li><code>minimax-coding.web_search</code> — 搜解决方案</li><li><code>exec</code> + <code>read</code> — 读本地项目代码定位根因</li></ul><p><strong>输出格式：</strong></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css">🐛 错误类型：<span class="hljs-selector-attr">[类型]</span><br>📍 位置：<span class="hljs-selector-attr">[文件:行号]</span><br>🔍 根因：<span class="hljs-selector-attr">[简单说明]</span><br>✅ 修复方案：<br>```<span class="hljs-selector-attr">[语言]</span><br><span class="hljs-selector-attr">[可执行的修复代码]</span><br></code></pre></td></tr></table></figure><pre><code class="hljs">**适用场景：**- 发错误截图 → 分析根因- 查 500/404/Bug 崩溃问题- 跨语言支持：JS / Python / Java / C# / C++---## 写在最后这两个 Skill 都是围绕日常工作流设计的。音乐生成把 AI 创意变成了可保存的作品，Bug Hunter 把截图变成了可直接行动的修复方案。工具本身不难，关键是**知道什么场景用什么工具**。---*相关项目：[PandaHub](https://github.com/TimeIsShort/pandahub) · [MiniMax Music Skill](https://github.com/TimeIsShort/skills) · [Bug Hunter Skill](https://github.com/TimeIsShort/skills)*</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>OpenClaw</tag>
+      
+      <tag>Skill</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World — 重新出发</title>
+    <link href="/2026/04/14/hello-world/"/>
+    <url>/2026/04/14/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>博客全新重建，用 Hexo + Yilia 主题重新出发。</p><p>这个博客会记录：</p><ul><li>🐼 PandaHub 项目开发日志</li><li>🎵 AI 音乐创作实践</li><li>🐛 Bug 追查与代码技巧</li><li>🔧 独立开发者的工具链搭建</li></ul><p>老文章已归档，新的在路上。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
