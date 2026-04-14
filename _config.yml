@@ -1,0 +1,66 @@
+# Site
+title: TimeIsShort's Blog
+subtitle: 技术·独立·AI协同
+description: 独立开发者的技术博客，记录代码、折腾与成长。
+keywords: Node.js, Express, AI, MiniMax, Hexo
+author: TimeIsShort
+language: zh-CN
+timezone: Asia/Shanghai
+
+# URL
+url: https://timeisshort.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+  pretty_urls:
+    trailing_index: false
+    trailing_html: false
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+future: true
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+
+# Home page
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+
+# Date
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+# Pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+theme: yilia
+
+# Deployment
+deploy:
+  type: git
+  repo: https://github.com/TimeIsShort/TimeIsShort.github.io.git
+  branch: master
+  name: TimeIsShort
+  email: timeisshort@example.com
