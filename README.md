@@ -36,7 +36,7 @@ npm install
 # 3. 克隆 Fluid 主题（1.9.9，与线上站一致）
 # 注意：themes/fluid 目录目前只有占位文件，需先删除占位再克隆
 rm -rf themes/fluid
-git clone -b 1.9.9 https://github.com/fluid-dev/hexo-theme-fluid.git themes/fluid
+git clone -b v1.9.9 https://github.com/fluid-dev/hexo-theme-fluid.git themes/fluid
 
 # 4. 本地预览
 npx hexo server
