@@ -1,0 +1,97 @@
+# Fluid 主题配置（全新重建，最小可用）
+# 说明：
+# - 本文件为 Fluid 1.9.9 主题配置的最小可用版本，不是旧站的精确还原。
+# - “反推”项：根据线上站点 HTML 可见部分推断（导航、Banner 图、页脚 Hexo+Fluid、标题）。
+# - “默认值”项：Fluid 官方默认行为，未在旧站中逐项核对；首次本地预览后可按需调整。
+# - 主题本体不在本仓库内，需按 README 克隆到 themes/fluid（见 README）。
+# - 评论：关闭（旧站未见评论模块，反推为关闭）。
+
+# ---------------- 基础 ----------------
+# 反推：标题与副标题来自线上站点
+blog_title: TimeIsShort's Blog
+blog_subtitle: 技术·独立·AI协同
+# 默认值：主题配色跟随系统
+color_scheme: auto
+
+# ---------------- 导航 ----------------
+# 反推：线上导航为 首页 / 归档 / 分类 / 标签 / 关于
+navbar:
+  links:
+    - name: 首页
+      link: /
+      icon: home-fill
+    - name: 归档
+      link: /archives/
+      icon: archive-fill
+    - name: 分类
+      link: /categories/
+      icon: category-fill
+    - name: 标签
+      link: /tags/
+      icon: tags-fill
+    - name: 关于
+      link: /about/
+      icon: user-fill
+  search:
+    enable: true
+  color_toggle:
+    enable: true
+
+# ---------------- Banner ----------------
+# 反推：线上 Banner 背景为 /img/default.png
+banner:
+  image: /img/default.png
+  mask: true
+  mask_color: 'rgba(0, 0, 0, 0.3)'
+
+# ---------------- 首页 ----------------
+# 默认值：每页 10 篇，与 _config.yml 的 per_page 一致
+index:
+  post_excerpt: true
+
+# ---------------- 文章页 ----------------
+post:
+  toc:
+    enable: true
+    expand_all: true
+    placement: right
+  code:
+    highlight: true
+    line_number: true
+    copy_btn: true
+  image:
+    caption: true
+    zoom: true
+  lazyload:
+    enable: true
+
+# ---------------- 搜索 ----------------
+# 反推：线上站点有本地搜索（local-search.xml）
+search:
+  enable: true
+  path: /local-search.xml
+  include_content: true
+
+# ---------------- 评论 ----------------
+# 反推：旧站未见评论模块，本重建默认关闭。如需开启，请自行配置 Waline / Gitalk 等。
+comments:
+  enable: false
+
+# ---------------- 页脚 ----------------
+# 反推：页脚为 Hexo + Fluid 署名
+footer:
+  show_hexo: true
+  show_fluid: true
+
+# ---------------- 其他默认值 ----------------
+anchorjs:
+  enable: true
+  placement: left
+  visible: hover
+progressbar:
+  enable: true
+  height_px: 3
+  color: '#29d'
+  options:
+    showSpinner: false
+    trickleSpeed: 100

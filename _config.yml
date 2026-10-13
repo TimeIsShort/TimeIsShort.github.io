@@ -1,3 +1,7 @@
+# Hexo 核心配置（全新重建，非旧 Yilia 脚手架）
+# 说明：本文件为新源码的 Hexo 核心配置。主题为 Fluid，部署目标为 TimeIsShort.github.io 的 master 分支（已生成静态站所在分支）。
+# 反推依据：线上站点 <head> 与页脚（Hexo 7.3.0 + Fluid 1.9.9、标题/作者/描述/关键词、导航、Banner）。
+
 # Site
 title: TimeIsShort's Blog
 subtitle: 技术·独立·AI协同
@@ -22,6 +26,9 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
 
 # Writing
 new_post_name: :title.md
@@ -30,11 +37,17 @@ titlecase: false
 external_link:
   enable: true
   field: site
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
 future: true
 highlight:
   line_number: true
   auto_detect: false
   tab_replace: ''
+prismjs:
+  enable: false
 
 # Home page
 index_generator:
@@ -44,8 +57,10 @@ index_generator:
 
 # Category & Tag
 default_category: uncategorized
+category_map:
+tag_map:
 
-# Date
+# Date / Time format
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 updated_option: 'mtime'
@@ -55,12 +70,12 @@ per_page: 10
 pagination_dir: page
 
 # Extensions
-theme: yilia
+theme: fluid
 
 # Deployment
+# 注意：部署目标是已生成站所在分支 master。执行 hexo deploy 会把 public/ 推到 master，覆盖线上站。
+# 首次使用前请确认：1) 你在 source 分支（或本地新源码目录）操作；2) 不要把 public/ 手动推到 source 分支。
 deploy:
   type: git
   repo: https://github.com/TimeIsShort/TimeIsShort.github.io.git
   branch: master
-  name: TimeIsShort
-  email: timeisshort@example.com
