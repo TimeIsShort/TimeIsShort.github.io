@@ -19,15 +19,15 @@
   <meta name="author" content="TimeIsShort">
   <meta name="keywords" content="Node.js, Express, AI, MiniMax, Hexo">
   
-    <meta name="description" content="今天给 OpenClaw 做了两个实用的 Skill，记录一下。 🎵 MiniMax Music SkillAI 音乐生成工具，一句话就能创作完整歌曲。 工作流：  输入主题 → MiniMax API 生成歌词 歌词 + 风格 → 生成 MP3 音频 自动保存到本地文件夹  生成作品（可点击试听）：  .audio-list { display: grid; grid-template-col">
+    <meta name="description" content="还原说明：本文由线上已生成 HTML 还原为 Markdown。标题、日期、标签、正文结构与可读文本已保留；以下部分在 HTML 还原中未能完整解析，未编造：① 生成作品的音频播放器 HTML 与 MP3 文件路径；② “烟雨江南”的时长（线上摘要中未显示）；③ 文末“相关项目”的完整 GitHub 链接 URL（仅保留项目名）。如需补齐，请以原始写作记录为准。  今天给 OpenClaw 做了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="今天做的两个 Skill - AI音乐生成 + Bug追查">
 <meta property="og:url" content="https://timeisshort.github.io/2026/04/14/two-skills-20260414/index.html">
 <meta property="og:site_name" content="TimeIsShort&#39;s Blog">
-<meta property="og:description" content="今天给 OpenClaw 做了两个实用的 Skill，记录一下。 🎵 MiniMax Music SkillAI 音乐生成工具，一句话就能创作完整歌曲。 工作流：  输入主题 → MiniMax API 生成歌词 歌词 + 风格 → 生成 MP3 音频 自动保存到本地文件夹  生成作品（可点击试听）：  .audio-list { display: grid; grid-template-col">
+<meta property="og:description" content="还原说明：本文由线上已生成 HTML 还原为 Markdown。标题、日期、标签、正文结构与可读文本已保留；以下部分在 HTML 还原中未能完整解析，未编造：① 生成作品的音频播放器 HTML 与 MP3 文件路径；② “烟雨江南”的时长（线上摘要中未显示）；③ 文末“相关项目”的完整 GitHub 链接 URL（仅保留项目名）。如需补齐，请以原始写作记录为准。  今天给 OpenClaw 做了">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-14T14:26:00.000Z">
-<meta property="article:modified_time" content="2026-04-14T15:49:46.083Z">
+<meta property="article:modified_time" content="2026-10-13T08:19:52.050Z">
 <meta property="article:author" content="TimeIsShort">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="OpenClaw">
@@ -100,7 +100,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>TimeIsShort</strong>
+      <strong>Fluid</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -328,7 +328,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.2k 字
         
       </span>
     
@@ -339,7 +339,7 @@
         
         
         
-          12 分钟
+          11 分钟
         
       </span>
     
@@ -383,7 +383,10 @@
             
               <div class="markdown-body">
                 
-                <p>今天给 OpenClaw 做了两个实用的 Skill，记录一下。</p>
+                <blockquote>
+<p>还原说明：本文由线上已生成 HTML 还原为 Markdown。标题、日期、标签、正文结构与可读文本已保留；以下部分在 HTML 还原中未能完整解析，未编造：① 生成作品的音频播放器 HTML 与 MP3 文件路径；② “烟雨江南”的时长（线上摘要中未显示）；③ 文末“相关项目”的完整 GitHub 链接 URL（仅保留项目名）。如需补齐，请以原始写作记录为准。</p>
+</blockquote>
+<p>今天给 OpenClaw 做了两个实用的 Skill，记录一下。</p>
 <h2 id="🎵-MiniMax-Music-Skill"><a href="#🎵-MiniMax-Music-Skill" class="headerlink" title="🎵 MiniMax Music Skill"></a>🎵 MiniMax Music Skill</h2><p>AI 音乐生成工具，一句话就能创作完整歌曲。</p>
 <p><strong>工作流：</strong></p>
 <ol>
@@ -392,51 +395,20 @@
 <li>自动保存到本地文件夹</li>
 </ol>
 <p><strong>生成作品（可点击试听）：</strong></p>
-<style>
-.audio-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
-.audio-card { background: #f8f9fa; border-radius: 8px; padding: 12px 16px; }
-.audio-name { font-weight: bold; margin-bottom: 6px; color: #333; }
-.audio-tag { font-size: 12px; color: #888; margin-bottom: 8px; }
-audio { width: 100%; height: 32px; }
-video { width: 100%; border-radius: 8px; margin: 8px 0; }
-.video-section { margin: 24px 0; }
-.video-label { font-weight: bold; color: #333; margin-bottom: 8px; }
-</style>
-
-<div class="audio-list">
-  <div class="audio-card">
-    <div class="audio-name">🎵 春日漫步</div>
-    <div class="audio-tag">Pop · 春日暖阳 · 137秒</div>
-    <audio controls><source src="/music/春日漫步.mp3" type="audio/mpeg"></audio>
-  </div>
-  <div class="audio-card">
-    <div class="audio-name">🎵 烟雨江南</div>
-    <div class="audio-tag">中国风 · 烟雨婉约</div>
-    <audio controls><source src="/music/烟雨江南.mp3" type="audio/mpeg"></audio>
-  </div>
-  <div class="audio-card">
-    <div class="audio-name">🎵 墨染江南</div>
-    <div class="audio-tag">古风 · 水墨画卷 · 206秒</div>
-    <audio controls><source src="/music/墨染江南.mp3" type="audio/mpeg"></audio>
-  </div>
-  <div class="audio-card">
-    <div class="audio-name">🎵 夏日微风</div>
-    <div class="audio-tag">浪漫 · 夏日海边 · 188秒</div>
-    <audio controls><source src="/music/夏日微风.mp3" type="audio/mpeg"></audio>
-  </div>
-</div>
-
+<ul>
+<li>🎵 春日漫步 — Pop · 春日暖阳 · 137秒</li>
+<li>🎵 烟雨江南 — 中国风 · 烟雨婉约（时长未在还原中解析到，未编造）</li>
+<li>🎵 墨染江南 — 古风 · 水墨画卷 · 206秒</li>
+<li>🎵 夏日微风 — 浪漫 · 夏日海边 · 188秒</li>
+</ul>
+<blockquote>
+<p>注：线上原文含可点击试听的音频列表，还原时未保留播放器代码。音频文件位于站点 <code>/music/</code> 目录下（见下方 MV 链接格式）。</p>
+</blockquote>
 <p><strong>🎬 墨染江南 MV 视频：</strong></p>
-<div class="video-section">
-  <div class="video-label">📱 抖音/小红书版（9:16 竖屏）</div>
-  <video controls><source src="/music/墨染江南_抖音.mp4" type="video/mp4"></video>
-</div>
-
-<div class="video-section">
-  <div class="video-label">🖥️ B站版（16:9 横屏）</div>
-  <video controls><source src="/music/墨染江南_B站.mp4" type="video/mp4"></video>
-</div>
-
+<ul>
+<li>📱 抖音&#x2F;小红书版（9:16 竖屏）：<a href="https://timeisshort.github.io/music/%E5%A2%A8%E6%9F%93%E6%B1%9F%E5%8D%97_%E6%8A%96%E9%9F%B3.mp4">https://timeisshort.github.io/music/墨染江南_抖音.mp4</a></li>
+<li>🖥️ B站版（16:9 横屏）：<a href="https://timeisshort.github.io/music/%E5%A2%A8%E6%9F%93%E6%B1%9F%E5%8D%97_B%E7%AB%99.mp4">https://timeisshort.github.io/music/墨染江南_B站.mp4</a></li>
+</ul>
 <p><strong>技术细节：</strong></p>
 <ul>
 <li>模型：<code>music-2.6</code></li>
@@ -448,7 +420,7 @@ video { width: 100%; border-radius: 8px; margin: 8px 0; }
 <hr>
 <h2 id="🐛-Bug-Hunter-Skill"><a href="#🐛-Bug-Hunter-Skill" class="headerlink" title="🐛 Bug Hunter Skill"></a>🐛 Bug Hunter Skill</h2><p>截图驱动的 Bug 追查 Agent，收到截图自动跑完全流程。</p>
 <p><strong>工作流：</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">发截图 → understand_image 分析 → web_search 搜方案 → 读本地代码 → 给出修复代码<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">发截图 → understand_image 分析 → web_search 搜方案 → 读本地代码 → 给出修复代码<br></code></pre></td></tr></table></figure>
 
 <p><strong>核心工具：</strong></p>
 <ul>
@@ -457,9 +429,10 @@ video { width: 100%; border-radius: 8px; margin: 8px 0; }
 <li><code>exec</code> + <code>read</code> — 读本地项目代码定位根因</li>
 </ul>
 <p><strong>输出格式：</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css">🐛 错误类型：<span class="hljs-selector-attr">[类型]</span><br>📍 位置：<span class="hljs-selector-attr">[文件:行号]</span><br>🔍 根因：<span class="hljs-selector-attr">[简单说明]</span><br>✅ 修复方案：<br>```<span class="hljs-selector-attr">[语言]</span><br><span class="hljs-selector-attr">[可执行的修复代码]</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">🐛 错误类型：[类型]<br>📍 位置：[文件:行号]<br>🔍 根因：[简单说明]<br>✅ 修复方案：<br>```[语言]<br>[可执行的修复代码]<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">
 **适用场景：**
+
 - 发错误截图 → 分析根因
 - 查 500/404/Bug 崩溃问题
 - 跨语言支持：JS / Python / Java / C# / C++
@@ -473,7 +446,8 @@ video { width: 100%; border-radius: 8px; margin: 8px 0; }
 工具本身不难，关键是**知道什么场景用什么工具**。
 
 ---
-*相关项目：[PandaHub](https://github.com/TimeIsShort/pandahub) · [MiniMax Music Skill](https://github.com/TimeIsShort/skills) · [Bug Hunter Skill](https://github.com/TimeIsShort/skills)*
+
+*相关项目：PandaHub · MiniMax Music Skill · Bug Hunter Skill（原文链接在 HTML 还原中未能完整解析，未编造 URL）*
 </code></pre>
 
                 
@@ -547,6 +521,12 @@ video { width: 100%; border-radius: 8px; margin: 8px 0; }
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2026/10/13/2026-10-13-ai-requirement-orchestrator-claude-jev-codex/" title="从项目知识库到 AI 研发调度：用 Claude、Jev 与 Codex 做微服务需求影响分析">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">从项目知识库到 AI 研发调度：用 Claude、Jev 与 Codex 做微服务需求影响分析</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
